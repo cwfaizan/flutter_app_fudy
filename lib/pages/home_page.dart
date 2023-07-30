@@ -7,7 +7,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Home Page'),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Text(
+                'Home Page',
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

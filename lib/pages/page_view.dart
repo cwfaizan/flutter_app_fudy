@@ -37,18 +37,14 @@ class IntroSlider extends StatelessWidget {
             bottom: 369.h,
             left: 20.w,
             right: 20.w,
-            child: Column(
-              children: [
-                SmoothPageIndicator(
-                  controller: controller,
-                  count: 3,
-                  effect: SlideEffect(
-                      dotColor: const Color(0xffDBDDDF),
-                      activeDotColor: const Color(0xff39B54A),
-                      dotHeight: 4.h,
-                      dotWidth: 26.w),
-                ),
-              ],
+            child: SmoothPageIndicator(
+              controller: controller,
+              count: 3,
+              effect: SlideEffect(
+                  dotColor: const Color(0xffDBDDDF),
+                  activeDotColor: const Color(0xff39B54A),
+                  dotHeight: 4.h,
+                  dotWidth: 26.w),
             ),
           )
         ],

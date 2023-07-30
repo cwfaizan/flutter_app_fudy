@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class EachPage extends StatelessWidget {
+class OnboardingContent extends StatelessWidget {
   final String title;
   final String path;
   final String msg;
 
-  const EachPage({
+  const OnboardingContent({
     super.key,
     required this.msg,
     required this.title,

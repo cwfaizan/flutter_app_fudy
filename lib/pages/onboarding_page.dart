@@ -4,9 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudy/pages/home_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'each_page.dart';
+import '../widgets/onboarding_content.dart';
 
-// ignore: must_be_immutable
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
@@ -31,17 +30,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
           PageView(
             controller: pageController,
             children: const [
-              EachPage(
+              OnboardingContent(
                   msg:
                       "Get it easy by ordering online for all the\n menus you want in our application, no\n need to leave the house and stay safe",
                   title: "It's easier to order online",
                   path: "assets/images/cover1.png"),
-              EachPage(
+              OnboardingContent(
                   msg:
                       "Various menus that you want are available\n on our application, no need to move to a\n different store, we have it all!",
                   title: "Get a variety of menus",
                   path: "assets/images/cover2.png"),
-              EachPage(
+              OnboardingContent(
                   msg:
                       "We can guarantee that all of our menus\n are made with the best recipes and tastes,\n especially for you, our loyal customers!",
                   title: "The best taste from us",

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -149,14 +148,14 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: 28.h,
               ),
-                Text(
+              Text(
                 "Phone Number",
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xff2F2F2F)),
               ),
-                 SizedBox(
+              SizedBox(
                 height: 72.h,
                 width: double.maxFinite,
                 child: TextFormField(

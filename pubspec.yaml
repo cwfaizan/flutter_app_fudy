@@ -44,6 +44,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   pinput: ^2.2.31
   persistent_bottom_nav_bar: ^5.0.2
+  intl_phone_field: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

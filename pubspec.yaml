@@ -44,6 +44,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   pinput: ^2.2.31
   persistent_bottom_nav_bar: ^5.0.2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,7 +70,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/svgs/
     # - images/a_dot_burr.jpeg
     # - images/a_dot_ham.jpeg
 

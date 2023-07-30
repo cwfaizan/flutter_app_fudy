@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'pages/page_view.dart';
+import 'pages/onboarding_page.dart';
+import 'themes/theme_mode.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,13 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: (context, child) => MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            colorScheme:
-                ColorScheme.fromSeed(seedColor: const Color(0xff39B54A)),
-            useMaterial3: true,
-          ),
-          home: IntroSlider()),
+        title: 'Flutter Demo',
+        themeMode: ThemeMode.system,
+        theme: lightThemeData,
+        darkTheme: darkThemeData,
+        home: OnboardingPage(),
+      ),
       designSize: const Size(414, 896),
     );
   }

@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// ignore: must_be_immutable
 class EachPage extends StatelessWidget {
-  String title;
-  String path;
-  String msg;
-  EachPage(
-      {super.key, required this.msg, required this.title, required this.path});
+  final String title;
+  final String path;
+  final String msg;
+
+  const EachPage({
+    super.key,
+    required this.msg,
+    required this.title,
+    required this.path,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE8E8E8),
+      backgroundColor: const Color(0xffE8E8E8),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: Image.asset(path),
+          Image.asset(
+            path,
+            height: 570.h,
+            width: 414.w,
+            fit: BoxFit.cover,
           ),
           Container(
             height: 326.h,

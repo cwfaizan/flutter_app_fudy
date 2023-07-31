@@ -12,11 +12,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: const Color(0xffffffff),
       body: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 4,
-        itemBuilder: (context, index) => HomeCard(),
+        itemBuilder: (context, index) => const HomeCard(),
       ),
     );
   }

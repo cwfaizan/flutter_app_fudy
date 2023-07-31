@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:like_button/like_button.dart';
 
 class HomeCard extends StatefulWidget {
@@ -15,7 +14,7 @@ class _HomeCardState extends State<HomeCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(colors: [
           Colors.transparent,
           Color(0xffffffff),
@@ -38,7 +37,7 @@ class _HomeCardState extends State<HomeCard> {
                 style: TextStyle(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w700,
-                  color: Color(0xff2F2F2F),
+                  color: const Color(0xff2F2F2F),
                 ),
               ),
             ),
@@ -50,7 +49,7 @@ class _HomeCardState extends State<HomeCard> {
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xff503E9D),
+                    color: const Color(0xff503E9D),
                   ),
                 ),
                 LikeButton(

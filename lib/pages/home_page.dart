@@ -8,20 +8,17 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               InkWell(
                 onTap: () {
                   showModalBottomSheet(
                     context: context,
-                    builder: (context) => Container(
-                      // height: 600,
-                      child: Text('data'),
-                    ),
+                    builder: (context) => const Text('data'),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Home Page',
                 ),
               ),

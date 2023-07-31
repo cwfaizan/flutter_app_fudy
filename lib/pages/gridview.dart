@@ -17,7 +17,7 @@ class _GridviewState extends State<Gridview> {
           crossAxisSpacing: 24.0,
           mainAxisSpacing: 24.0,
           children: List.generate(6, (index) {
-            return Center(child: HomeCard());
+            return const Center(child: HomeCard());
           })),
     );
   }

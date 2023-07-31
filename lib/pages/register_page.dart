@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -38,16 +39,28 @@ class _RegisterPageState extends State<RegisterPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Hello,",
-                          style: TextStyle(
-                            fontSize: 40.sp,
-                            fontWeight: FontWeight.w800,
-                            color: const Color(0xff2F2F2F),
-                          ),
+                        Row(
+                          children: [
+                            Text(
+                              "Join now ",
+                              style: TextStyle(
+                                fontSize: 40.sp,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(0xff2F2F2F),
+                              ),
+                            ),
+                            Text(
+                              "with ",
+                              style: TextStyle(
+                                fontSize: 35.sp,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(0xff2F2F2F),
+                              ),
+                            )
+                          ],
                         ),
                         Text(
-                          "Welcome Back !",
+                          " us!",
                           style: TextStyle(
                             fontSize: 35.sp,
                             fontWeight: FontWeight.w600,
@@ -155,20 +168,47 @@ class _RegisterPageState extends State<RegisterPage> {
                     fontWeight: FontWeight.w700,
                     color: const Color(0xff2F2F2F)),
               ),
+              // SizedBox(
+              //   height: 72.h,
+              //   width: double.maxFinite,
+              //   child: TextFormField(
+              //     decoration: InputDecoration(
+              //       hintText: 'Type your password',
+              //       hintStyle: TextStyle(
+              //         fontSize: 14.sp,
+              //         fontWeight: FontWeight.w500,
+              //         color: const Color(0xffBDBDBD),
+              //       ),
+              //       // prefix: ,
+              //       filled: true,
+              //       fillColor: const Color(0xffffffff),
+              //       border: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(0.r),
+              //         borderSide: const BorderSide(
+              //           width: 1,
+              //           color: Color(0xffE8E8E8),
+              //         ),
+              //       ),
+              //       enabledBorder: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(12.r),
+              //         borderSide: const BorderSide(
+              //           width: 1,
+              //           color: Color(0xffE8E8E8),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               SizedBox(
-                height: 72.h,
+                height: 12.h,
+              ),
+              SizedBox(
+                height: 100.h,
                 width: double.maxFinite,
-                child: TextFormField(
+                child: IntlPhoneField(
+                  flagsButtonPadding: const EdgeInsets.all(8),
+                  dropdownIconPosition: IconPosition.trailing,
                   decoration: InputDecoration(
-                    hintText: 'Type your password',
-                    hintStyle: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffBDBDBD),
-                    ),
-                    // prefix: ,
-                    filled: true,
-                    fillColor: const Color(0xffffffff),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(0.r),
                       borderSide: const BorderSide(
@@ -183,11 +223,24 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Color(0xffE8E8E8),
                       ),
                     ),
+                    filled: true,
+                    fillColor: const Color(0xffffffff),
+                    labelText: '+1 |',
+                    labelStyle: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w500,
+                      color: const Color(0xffBDBDBD),
+                    ),
                   ),
+                  initialCountryCode: 'IN',
+                  onChanged: (phone) {
+                    // print(phone.completeNumber);
+                  },
                 ),
               ),
+
               SizedBox(
-                height: 28.h,
+                height: 32.h,
               ),
               SizedBox(
                 height: 72.h,

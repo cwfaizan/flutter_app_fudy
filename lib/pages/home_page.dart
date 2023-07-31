@@ -5,14 +5,25 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Text(
-                'Home Page',
+              InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) => Container(
+                      // height: 600,
+                      child: Text('data'),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Home Page',
+                ),
               ),
             ],
           ),

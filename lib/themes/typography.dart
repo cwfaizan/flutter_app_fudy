@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'theme_colors.dart';
 
 final lightTextTheme = GoogleFonts.montserratTextTheme(
   const TextTheme().copyWith(
@@ -9,9 +12,13 @@ final lightTextTheme = GoogleFonts.montserratTextTheme(
     headlineLarge: const TextStyle(),
     headlineMedium: const TextStyle(),
     headlineSmall: const TextStyle(),
-    titleLarge: const TextStyle(),
-    titleMedium: const TextStyle(),
-    titleSmall: const TextStyle(),
+    titleLarge: const TextStyle(color: kLightTitleColor),
+    titleMedium: const TextStyle(color: kLightTitleColor),
+    titleSmall: TextStyle(
+      color: kLightTitleColor,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w700,
+    ),
     bodyLarge: const TextStyle(),
     bodyMedium: const TextStyle(),
     bodySmall: const TextStyle(),
@@ -29,9 +36,13 @@ final darkTextTheme = GoogleFonts.montserratTextTheme(
     headlineLarge: const TextStyle(),
     headlineMedium: const TextStyle(),
     headlineSmall: const TextStyle(),
-    titleLarge: const TextStyle(),
-    titleMedium: const TextStyle(),
-    titleSmall: const TextStyle(),
+    titleLarge: const TextStyle(color: kDarkTitleColor),
+    titleMedium: const TextStyle(color: kDarkTitleColor),
+    titleSmall: TextStyle(
+      color: kDarkTitleColor,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w700,
+    ),
     bodyLarge: const TextStyle(),
     bodyMedium: const TextStyle(),
     bodySmall: const TextStyle(),

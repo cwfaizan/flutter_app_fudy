@@ -186,23 +186,7 @@ class TrancationBottomSheet extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              // ListTile(
-                              //   leading: Icon(Icons.person),
-                              //   title: Text(
-                              //     "Tony Lawawa",
-                              //     style: TextStyle(
-                              //         fontSize: 12.sp,
-                              //         fontWeight: FontWeight.w700,
-                              //         color: const Color(0xff2F2F2F)),
-                              //   ),
-                              //   subtitle: Text(
-                              //     "Shippers’s Name",
-                              //     style: TextStyle(
-                              //         fontSize: 12.sp,
-                              //         fontWeight: FontWeight.w500,
-                              //         color: const Color(0xffBDBDBD)),
-                              //   ),
-                              // )
+                     
                             ],
                           ),
                         )),

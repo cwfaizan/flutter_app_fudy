@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fudy/pages/login_page.dart';
 
 class ForgotPassward extends StatefulWidget {
   const ForgotPassward({super.key});
@@ -12,6 +13,15 @@ class _ForgotPasswardState extends State<ForgotPassward> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+              );
+            },
+            child: const Icon(Icons.arrow_back_ios)),
+      ),
       backgroundColor: const Color(0xffE8E8E8),
       body: Stack(
         children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fudy/pages/home_screen.dart';
 import 'package:fudy/widgets/favourite_card.dart';
 
 class FavouriteCardPage extends StatefulWidget {
@@ -11,6 +12,7 @@ class FavouriteCardPage extends StatefulWidget {
 }
 
 class _FavouriteCardPageState extends State<FavouriteCardPage> {
+  int buttonSelected = 1;
   int selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -25,37 +27,54 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon:
-                InkWell(onTap: () {}, child: const Icon(Icons.home, size: 24)),
-            backgroundColor: const Color(0xff503E9D),
+            icon: InkWell(
+                onTap: () {
+                  buttonSelected = 1;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  );
+                },
+                child: Icon(
+                  Icons.home,
+                  size: 24,
+                )),
+            // backgroundColor: const Color(0xff503E9D),
             label: 'home',
           ),
           BottomNavigationBarItem(
             icon: InkWell(
-                onTap: () {},
-                child: const Icon(FontAwesomeIcons.heart, size: 24)),
-            backgroundColor: const Color(0xff503E9D),
+                onTap: () {
+                  buttonSelected = 2;
+                },
+                child: Icon(
+                  FontAwesomeIcons.heart,
+                  size: 24,
+                )),
+            // backgroundColor: const Color(0xff503E9D),
             label: 'like',
           ),
           BottomNavigationBarItem(
             icon: InkWell(
-                onTap: () {},
-                child: const Icon(FontAwesomeIcons.bell, size: 24)),
-            backgroundColor: const Color(0xff503E9D),
+              onTap: () {},
+              child: const Icon(FontAwesomeIcons.bell, size: 24),
+            ),
+            // backgroundColor: const Color(0xff503E9D),
             label: 'press',
           ),
           BottomNavigationBarItem(
             icon: InkWell(
                 onTap: () {},
                 child: const Icon(FontAwesomeIcons.cartShopping, size: 24)),
-            backgroundColor: const Color(0xff503E9D),
+            // backgroundColor: const Color(0xff503E9D),
             label: 'cart',
           ),
         ],
-
+        selectedIconTheme: const IconThemeData(
+          color: Color(0xff503E9D),
+        ),
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
-        selectedItemColor: const Color(0xff503E9D),
+        // selectedItemColor: const Color(0xff503E9D),
         iconSize: 24,
         onTap: _onItemTapped,
         // elevation: 5,

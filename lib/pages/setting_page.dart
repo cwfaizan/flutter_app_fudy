@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -9,9 +10,54 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
+  int selectedIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon:
+                InkWell(onTap: () {}, child: const Icon(Icons.home, size: 24)),
+            backgroundColor: const Color(0xff503E9D),
+            label: 'home',
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+                onTap: () {},
+                child: const Icon(FontAwesomeIcons.heart, size: 24)),
+            backgroundColor: const Color(0xff503E9D),
+            label: 'like',
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+                onTap: () {},
+                child: const Icon(FontAwesomeIcons.bell, size: 24)),
+            backgroundColor: const Color(0xff503E9D),
+            label: 'press',
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+                onTap: () {},
+                child: const Icon(FontAwesomeIcons.cartShopping, size: 24)),
+            backgroundColor: const Color(0xff503E9D),
+            label: 'cart',
+          ),
+        ],
+
+        type: BottomNavigationBarType.fixed,
+        currentIndex: selectedIndex,
+        selectedItemColor: const Color(0xff503E9D),
+        iconSize: 24,
+        onTap: _onItemTapped,
+        // elevation: 5,
+      ),
       backgroundColor: const Color(0xffFFFFFF),
       body: SingleChildScrollView(
         child: Padding(

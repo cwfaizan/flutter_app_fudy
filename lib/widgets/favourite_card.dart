@@ -25,14 +25,14 @@ class FavouriteCard extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 0.50, color: Colors.white),
-          borderRadius: BorderRadius.circular(20),
+          side: const BorderSide(width: 0, color: Colors.transparent),
+          borderRadius: BorderRadius.circular(20.r),
         ),
-        shadows: const [
+        shadows: [
           BoxShadow(
-            color: Color(0x19000000),
-            blurRadius: 80,
-            offset: Offset(50, 20),
+            color: const Color(0x19000000),
+            blurRadius: 80.r,
+            offset: Offset(50.w, 20.h),
             spreadRadius: 0,
           )
         ],
@@ -52,12 +52,10 @@ class FavouriteCard extends StatelessWidget {
           SizedBox(height: 20.h),
           Text(
             title,
-            style: const TextStyle(
-              color: Color(0xFF2E2E2E),
-              fontSize: 14,
+            style: TextStyle(
+              color: const Color(0xFF2E2E2E),
+              fontSize: 14.sp,
               fontWeight: FontWeight.w700,
-              height: 2,
-              letterSpacing: 0.07,
             ),
           ),
           const Spacer(),
@@ -66,12 +64,10 @@ class FavouriteCard extends StatelessWidget {
             children: [
               Text(
                 '\$ $price',
-                style: const TextStyle(
-                  color: Color(0xFF503E9D),
-                  fontSize: 12,
+                style: TextStyle(
+                  color: const Color(0xFF503E9D),
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
-                  height: 2,
-                  letterSpacing: 0.06,
                 ),
               ),
               SvgPicture.asset(

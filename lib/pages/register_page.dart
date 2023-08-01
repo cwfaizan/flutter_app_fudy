@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fudy/pages/login_page.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -279,7 +280,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: const Color(0xff2F2F2F)),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()),
+                      );
+                    },
                     child: Text(
                       "Login",
                       style: TextStyle(

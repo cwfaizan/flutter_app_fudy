@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fudy/pages/forgot_passward.dart';
+import 'package:fudy/pages/home_screen.dart';
+import 'package:fudy/pages/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -150,7 +153,12 @@ class _LoginPageState extends State<LoginPage> {
                 height: 28.h,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => const ForgotPassward()),
+                  );
+                },
                 child: Text(
                   "Forgot Password",
                   style: TextStyle(
@@ -166,7 +174,12 @@ class _LoginPageState extends State<LoginPage> {
                 height: 72.h,
                 width: double.maxFinite,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff503E9D),
                     shape: RoundedRectangleBorder(
@@ -216,7 +229,12 @@ class _LoginPageState extends State<LoginPage> {
                         color: const Color(0xff2F2F2F)),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterPage()),
+                      );
+                    },
                     child: Text(
                       "Register",
                       style: TextStyle(

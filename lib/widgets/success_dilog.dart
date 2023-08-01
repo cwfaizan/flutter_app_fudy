@@ -24,7 +24,7 @@ class _SuccessDilogeState extends State<SuccessDiloge> {
           ),
         ),
         child: Text(
-          "Track my Order",
+          "Done",
           style: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w500,

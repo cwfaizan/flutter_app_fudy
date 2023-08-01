@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'themes/theme_mode.dart';
-import 'widgets/alert_dilog.dart';
 import 'widgets/success_dilog.dart';
 // import 'pages/setting_page.dart';
 // import 'widgets/transcation_history_content.dart';

@@ -19,7 +19,7 @@ class AdmHomeCard extends StatelessWidget {
       ),
       child: Padding(
         padding: REdgeInsets.all(16.0),
-        child: Row(
+        child: const Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

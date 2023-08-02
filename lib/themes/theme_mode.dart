@@ -9,6 +9,7 @@ import 'typography.dart';
 // Light theme
 final lightThemeData = ThemeData(
   useMaterial3: true,
+  brightness: Brightness.light,
   appBarTheme: lightAppBarTheme,
   colorScheme: lightColorScheme,
   textTheme: lightTextTheme,
@@ -20,6 +21,7 @@ final lightThemeData = ThemeData(
 // Dark theme
 final darkThemeData = ThemeData(
   useMaterial3: true,
+  brightness: Brightness.dark,
   appBarTheme: darkAppBarTheme,
   colorScheme: darkColorScheme,
   textTheme: darkTextTheme,

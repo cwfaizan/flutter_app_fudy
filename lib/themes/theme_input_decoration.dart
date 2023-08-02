@@ -13,7 +13,7 @@ final kOutlineInputBorder = OutlineInputBorder(
 );
 
 final kContentPaddingVertical =
-    EdgeInsets.symmetric(vertical: 30.h, horizontal: 25.w);
+    EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w);
 
 final lightInputDecorationTheme = InputDecorationTheme(
   border: kOutlineInputBorder,

@@ -135,13 +135,8 @@ class _LoginPageState extends State<LoginPage> {
                           builder: (context) => const HomeScreen()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     "Login",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffFDFDFD),
-                    ),
                   ),
                 ),
               ),

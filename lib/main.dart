@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         darkTheme: darkThemeData,
         home: const LoginPage(),
       ),
-      designSize: const Size(414, 896),
+      designSize: const Size(375, 812),
     );
   }
 }

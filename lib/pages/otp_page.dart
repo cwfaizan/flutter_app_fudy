@@ -37,88 +37,91 @@ class _OtpVerificationState extends State<OtpVerification> {
     );
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 75.h,
-          ),
-          Center(
-              child: Text(
-            "OTP Verivication",
-            style: TextStyle(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w700,
-              color: const Color(0xff2F2F2F),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 100.h,
             ),
-          )),
-          SizedBox(
-            height: 20.h,
-          ),
-          Center(
-              child: Text(
-            "Enter the 6-digit OTP sent via SMS ",
-            style: TextStyle(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              color: const Color(0xffBDBDBD),
+            Center(
+                child: Text(
+              "OTP Verivication",
+              style: TextStyle(
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w700,
+                color: const Color(0xff2F2F2F),
+              ),
+            )),
+            SizedBox(
+              height: 70.h,
             ),
-          )),
-          Center(
-              child: Text(
-            "to confirm payment",
-            style: TextStyle(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              color: const Color(0xffBDBDBD),
+            Center(
+                child: Text(
+              "Enter the 4-digit OTP sent via SMS ",
+              style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: const Color(0xffBDBDBD),
+              ),
+            )),
+            Center(
+                child: Text(
+              "to confirm payment",
+              style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: const Color(0xffBDBDBD),
+              ),
+            )),
+            SizedBox(
+              height: 110.h,
             ),
-          )),
-          SizedBox(
-            height: 60.h,
-          ),
-          Center(
-            child: Pinput(
-              length: 4,
-              // controller: ,
-              defaultPinTheme: defaultPinTheme,
-              focusedPinTheme: focusedPinTheme,
-              submittedPinTheme: submittedPinTheme,
-              validator: (s) {
-                return s == '2222' ? null : 'Pin is incorrect';
-              },
-              pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-              showCursor: true,
-              // onCompleted: (pin) => print(pin),
+            Center(
+              child: Pinput(
+                length: 4,
+                // controller: ,
+                defaultPinTheme: defaultPinTheme,
+                focusedPinTheme: focusedPinTheme,
+                submittedPinTheme: submittedPinTheme,
+                validator: (s) {
+                  return s == '2222' ? null : 'Pin is incorrect';
+                },
+                pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                showCursor: true,
+                // onCompleted: (pin) => print(pin),
+              ),
             ),
-          ),
-          SizedBox(
-            height: 78.h,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 102.w),
-            child: Row(
-              children: [
-                Text(
-                  "Did not receive?",
-                  style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xff503E9D)),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Resend OTP",
+            SizedBox(
+              height: 80.h,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 52.w),
+              child: Row(
+                children: [
+                  Text(
+                    "Did not receive?",
                     style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xff503E9D)),
                   ),
-                )
-              ],
-            ),
-          )
-        ],
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Resend OTP",
+                      style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xff503E9D)),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

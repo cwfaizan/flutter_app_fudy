@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fudy/widgets/transcation_history_content.dart';
 
 import '../widgets/home_card.dart';
+import 'favourite_card_page.dart';
 
 class TransactionPage extends StatefulWidget {
   const TransactionPage({super.key});
@@ -13,10 +15,118 @@ class TransactionPage extends StatefulWidget {
 }
 
 class _TransactionPageState extends State<TransactionPage> {
+  int selectedIndex = 2;
+  void _onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon:
+                InkWell(onTap: () {}, child: const Icon(Icons.home, size: 24)),
+            // backgroundColor: const Color(0xff503E9D),
+            label: 'home',
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => const FavouriteCardPage()),
+                  );
+                },
+                child: const Icon(FontAwesomeIcons.heart, size: 24)),
+            // backgroundColor: const Color(0xff503E9D),
+            label: 'like',
+          ),
+          BottomNavigationBarItem(
+              icon: PopupMenuButton(
+                  itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.person),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("User Profile")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.card_membership),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("Payment Card")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.outgoing_mail),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("Ongoing Order")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.pages),
+                            title: InkWell(
+                                onTap: () {}, child: const Text("Voucher")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.history),
+                            title: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TransactionHistory()),
+                                  );
+                                },
+                                child: const Text("Transaction History")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.logout),
+                            title: InkWell(
+                                onTap: () {}, child: const Text("Log out")),
+                          ),
+                        )
+                      ]),
+              label: "Menu bar"),
+          // BottomNavigationBarItem(
+          //   icon: InkWell(
+          //       onTap: () {},
+          //       child: const Icon(FontAwesomeIcons.bell, size: 24)),
+          //   // backgroundColor: const Color(0xff503E9D),
+          //   label: 'press',
+          // ),
+          // BottomNavigationBarItem(
+          //   icon: InkWell(
+          //       onTap: () {},
+          //       child: const Icon(FontAwesomeIcons.cartShopping, size: 24)),
+          //   // backgroundColor: const Color(0xff503E9D),
+          //   label: 'cart',
+          // ),
+        ],
+        selectedIconTheme: const IconThemeData(
+          color: Color(0xff000000),
+        ),
+        type: BottomNavigationBarType.fixed,
+        currentIndex: selectedIndex,
+        // selectedItemColor: const Color(0xff503E9D),
+        iconSize: 24,
+        onTap: _onItemTapped,
+        // elevation: 5,
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(

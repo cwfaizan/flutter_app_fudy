@@ -28,13 +28,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                      top: 21.h,
+                      top: 30.h,
                       right: 184.w,
                     ),
                     child: Image.asset("assets/images/l.png"),
                   ),
                   Positioned(
-                    top: 56.h,
+                    top: 65.h,
                     left: 20.w,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -84,19 +84,19 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: const Color(0xff2F2F2F)),
               ),
               SizedBox(
-                height: 12.h,
+                height: 10.h,
               ),
               SizedBox(
                 height: 72.h,
                 width: double.maxFinite,
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Insert your email here',
                   ),
                 ),
               ),
               SizedBox(
-                height: 28.h,
+                height: 20.h,
               ),
               Text(
                 "Password",
@@ -106,40 +106,19 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: const Color(0xff2F2F2F)),
               ),
               SizedBox(
-                height: 12.h,
+                height: 10.h,
               ),
               SizedBox(
                 height: 72.h,
                 width: double.maxFinite,
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Type your password',
-                    hintStyle: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffBDBDBD),
-                    ),
-                    filled: true,
-                    fillColor: const Color(0xffffffff),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(0.r),
-                      borderSide: const BorderSide(
-                        width: 1,
-                        color: Color(0xffE8E8E8),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                      borderSide: const BorderSide(
-                        width: 1,
-                        color: Color(0xffE8E8E8),
-                      ),
-                    ),
                   ),
                 ),
               ),
               SizedBox(
-                height: 28.h,
+                height: 20.h,
               ),
               Text(
                 "Phone Number",
@@ -180,10 +159,10 @@ class _RegisterPageState extends State<RegisterPage> {
               //   ),
               // ),
               SizedBox(
-                height: 12.h,
+                height: 10.h,
               ),
               SizedBox(
-                height: 100.h,
+                height: 90.h,
                 width: double.maxFinite,
                 child: IntlPhoneField(
                   flagsButtonPadding: const EdgeInsets.all(8),
@@ -205,7 +184,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     filled: true,
                     fillColor: const Color(0xffffffff),
-                    labelText: '+1 |',
+                    labelText: '|',
                     labelStyle: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
@@ -220,25 +199,14 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
 
               SizedBox(
-                height: 32.h,
+                height: 35.h,
               ),
               SizedBox(
                 width: double.maxFinite,
                 child: FilledButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff503E9D),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                  ),
-                  child: Text(
+                  child: const Text(
                     "Register",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffFDFDFD),
-                    ),
                   ),
                 ),
               ),

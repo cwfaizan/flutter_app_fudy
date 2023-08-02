@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fudy/pages/home_screen.dart';
 import 'package:fudy/widgets/favourite_card.dart';
 
+import '../widgets/transcation_history_content.dart';
+
 class FavouriteCardPage extends StatefulWidget {
   const FavouriteCardPage({super.key});
 
@@ -12,8 +14,8 @@ class FavouriteCardPage extends StatefulWidget {
 }
 
 class _FavouriteCardPageState extends State<FavouriteCardPage> {
-  int buttonSelected = 1;
-  int selectedIndex = 0;
+  // int buttonSelected = 1;
+  int selectedIndex = 1;
   void _onItemTapped(int index) {
     setState(() {
       selectedIndex = index;
@@ -29,12 +31,11 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
           BottomNavigationBarItem(
             icon: InkWell(
                 onTap: () {
-                  buttonSelected = 1;
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const HomeScreen()),
                   );
                 },
-                child: Icon(
+                child: const Icon(
                   Icons.home,
                   size: 24,
                 )),
@@ -43,10 +44,8 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
           ),
           BottomNavigationBarItem(
             icon: InkWell(
-                onTap: () {
-                  buttonSelected = 2;
-                },
-                child: Icon(
+                onTap: () {},
+                child: const Icon(
                   FontAwesomeIcons.heart,
                   size: 24,
                 )),
@@ -54,23 +53,80 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
             label: 'like',
           ),
           BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {},
-              child: const Icon(FontAwesomeIcons.bell, size: 24),
-            ),
-            // backgroundColor: const Color(0xff503E9D),
-            label: 'press',
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-                onTap: () {},
-                child: const Icon(FontAwesomeIcons.cartShopping, size: 24)),
-            // backgroundColor: const Color(0xff503E9D),
-            label: 'cart',
-          ),
+              icon: PopupMenuButton(
+                  itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.person),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("User Profile")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.card_membership),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("Payment Card")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.outgoing_mail),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("Ongoing Order")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.pages),
+                            title: InkWell(
+                                onTap: () {}, child: const Text("Voucher")),
+                          ),
+                        ),
+                            PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.history),
+                            title: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TransactionHistory()),
+                                  );
+                                },
+                                child: const Text("Transaction History")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.logout),
+                            title: InkWell(
+                                onTap: () {}, child: const Text("Log out")),
+                          ),
+                        )
+                      ]),
+              label: "Menu bar"),
+          // BottomNavigationBarItem(
+          //   icon: InkWell(
+          //     onTap: () {},
+          //     child: const Icon(FontAwesomeIcons.bell, size: 24),
+          //   ),
+          //   // backgroundColor: const Color(0xff503E9D),
+          //   label: 'press',
+          // ),
+          // BottomNavigationBarItem(
+          //   icon: InkWell(
+          //       onTap: () {},
+          //       child: const Icon(FontAwesomeIcons.cartShopping, size: 24)),
+          //   // backgroundColor: const Color(0xff503E9D),
+          //   label: 'cart',
+          // ),
         ],
         selectedIconTheme: const IconThemeData(
-          color: Color(0xff503E9D),
+          color: Color(0xff000000),
         ),
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
@@ -84,7 +140,7 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
         child: Column(
           children: [
             SizedBox(
-              height: 55.h,
+              height: 60.h,
             ),
             Text(
               "Favorites",
@@ -94,44 +150,22 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
                   color: const Color(0xff2F2F2F)),
             ),
             SizedBox(
-              height: 40.h,
+              height: 20.h,
             ),
             SizedBox(
-              height: 60.h,
               width: double.maxFinite,
               child: TextFormField(
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(
                     Icons.search,
                     color: Color(0xffBDBDBD),
                   ),
                   hintText: 'Search',
-                  hintStyle: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xffBDBDBD),
-                  ),
-                  filled: true,
-                  fillColor: const Color(0xffffffff),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(0.r),
-                    borderSide: const BorderSide(
-                      width: 1,
-                      color: Color(0xffE8E8E8),
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                    borderSide: const BorderSide(
-                      width: 1,
-                      color: Color(0xffE8E8E8),
-                    ),
-                  ),
                 ),
               ),
             ),
             SizedBox(
-              height: 600.h,
+              height: 540.h,
               child: GridView.count(
                   crossAxisCount: 2,
                   crossAxisSpacing: 20.w,

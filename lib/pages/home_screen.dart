@@ -6,6 +6,7 @@ import 'package:fudy/pages/favourite_card_page.dart';
 import 'package:fudy/widgets/home_page_content.dart';
 
 import '../widgets/home_card.dart';
+import '../widgets/transcation_history_content.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,22 +47,79 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'like',
           ),
           BottomNavigationBarItem(
-            icon: InkWell(
-                onTap: () {},
-                child: const Icon(FontAwesomeIcons.bell, size: 24)),
-            // backgroundColor: const Color(0xff503E9D),
-            label: 'press',
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-                onTap: () {},
-                child: const Icon(FontAwesomeIcons.cartShopping, size: 24)),
-            // backgroundColor: const Color(0xff503E9D),
-            label: 'cart',
-          ),
+              icon: PopupMenuButton(
+                  itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.person),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("User Profile")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.card_membership),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("Payment Card")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.outgoing_mail),
+                            title: InkWell(
+                                onTap: () {},
+                                child: const Text("Ongoing Order")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.pages),
+                            title: InkWell(
+                                onTap: () {}, child: const Text("Voucher")),
+                          ),
+                        ),
+                             PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.history),
+                            title: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TransactionHistory()),
+                                  );
+                                },
+                                child: const Text("Transaction History")),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: const Icon(Icons.logout),
+                            title: InkWell(
+                                onTap: () {}, child: const Text("Log out")),
+                          ),
+                        )
+                      ]),
+              label: "Menu bar"),
+          // BottomNavigationBarItem(
+          //   icon: InkWell(
+          //       onTap: () {},
+          //       child: const Icon(FontAwesomeIcons.bell, size: 24)),
+          //   // backgroundColor: const Color(0xff503E9D),
+          //   label: 'press',
+          // ),
+          // BottomNavigationBarItem(
+          //   icon: InkWell(
+          //       onTap: () {},
+          //       child: const Icon(FontAwesomeIcons.cartShopping, size: 24)),
+          //   // backgroundColor: const Color(0xff503E9D),
+          //   label: 'cart',
+          // ),
         ],
         selectedIconTheme: const IconThemeData(
-          color: Color(0xff503E9D),
+          color: Color(0xff000000),
         ),
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,

@@ -30,13 +30,13 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                      top: 21.h,
+                      top: 40.h,
                       right: 184.w,
                     ),
                     child: Image.asset("assets/images/l.png"),
                   ),
                   Positioned(
-                    top: 56.h,
+                    top: 65.h,
                     left: 20.w,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(
-                height: 28.h,
+                height: 60.h,
               ),
               InkWell(
                 onTap: () {
@@ -124,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(
-                height: 28.h,
+                height: 20.h,
               ),
               SizedBox(
                 width: double.maxFinite,
@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(
-                height: 80.h,
+                height: 40.h,
               ),
 
               Row(

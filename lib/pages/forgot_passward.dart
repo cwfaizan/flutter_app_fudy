@@ -29,79 +29,84 @@ class _ForgotPasswardState extends State<ForgotPassward> {
           Container(
             height: 416,
             color: const Color(0xffffffff),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 65.h,
-                ),
-                Center(
-                  child: Text(
-                    "Forgot Password",
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Center(
+                    child: Text(
+                      "Forgot Password",
+                      style: TextStyle(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700,
+                          color: const Color(0xff2F2F2F)),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Center(
+                    child: Text(
+                      "Lorem Ipsum dolor sit amet consecteur",
+                      style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xffBDBDBD)),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "lorem lorem in your email",
+                      style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xffBDBDBD)),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Text(
+                    "Email",
                     style: TextStyle(
-                        fontSize: 20.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xff2F2F2F)),
                   ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Center(
-                  child: Text(
-                    "Lorem Ipsum dolor sit amet consecteur",
-                    style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xffBDBDBD)),
+                  SizedBox(
+                    height: 12.h,
                   ),
-                ),
-                Center(
-                  child: Text(
-                    "lorem lorem in your email",
-                    style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xffBDBDBD)),
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'Insert your email here',
+                      ),
+                    ),
                   ),
-                ),
-
-                Text(
-                  "Email",
-                  style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w700,
-                      color: const Color(0xff2F2F2F)),
-                ),
-                // SizedBox(
-                //   height: 12.h,
-                // ),
-                // SizedBox(
-                //   width: double.maxFinite,
-                //   child: TextFormField(
-                //     decoration: const InputDecoration(
-                //       hintText: 'Insert your email here',
-                //     ),
-                //   ),
-                // ),
-                // SizedBox(
-                //   height: 20.h,
-                // ),
-                // SizedBox(
-                //   width: double.maxFinite,
-                //   child: FilledButton(
-                //     onPressed: () {},
-                //     child: Text(
-                //       "Send",
-                //       style: TextStyle(
-                //         fontSize: 16.sp,
-                //         fontWeight: FontWeight.w500,
-                //         color: const Color(0xffFDFDFD),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-              ],
+                  SizedBox(
+                    height: 40.h,
+                  ),
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: FilledButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Send",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xffFDFDFD),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

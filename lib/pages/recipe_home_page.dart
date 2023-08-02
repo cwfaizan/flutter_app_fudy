@@ -5,14 +5,14 @@ import 'package:fudy/widgets/recipe_home_card.dart';
 
 import 'recipe_edit_page.dart';
 
-class RecipeHome extends StatefulWidget {
-  const RecipeHome({super.key});
+class RecipeHomePage extends StatefulWidget {
+  const RecipeHomePage({super.key});
 
   @override
-  State<RecipeHome> createState() => _RecipeHomeState();
+  State<RecipeHomePage> createState() => _RecipeHomePageState();
 }
 
-class _RecipeHomeState extends State<RecipeHome> {
+class _RecipeHomePageState extends State<RecipeHomePage> {
   var recipeList = [
     for (int i = 0; i < 200; i++)
       Recipe(

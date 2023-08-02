@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'pages/favourite_card_page.dart';
-import 'pages/login_page.dart';
 import 'themes/theme_mode.dart';
+import 'widgets/popup_menu_button.dart';
 
 // import 'pages/setting_page.dart';
 // import 'widgets/transcation_history_content.dart';
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: lightThemeData,
         darkTheme: darkThemeData,
-        home: const LoginPage(),
+        home: const PopUpButton(),
       ),
       designSize: const Size(414, 896),
     );

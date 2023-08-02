@@ -77,32 +77,10 @@ class _LoginPageState extends State<LoginPage> {
                 height: 12.h,
               ),
               SizedBox(
-                height: 72.h,
                 width: double.maxFinite,
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Insert your email here',
-                    hintStyle: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffBDBDBD),
-                    ),
-                    filled: true,
-                    fillColor: const Color(0xffffffff),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(0.r),
-                      borderSide: const BorderSide(
-                        width: 1,
-                        color: Color(0xffE8E8E8),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                      borderSide: const BorderSide(
-                        width: 1,
-                        color: Color(0xffE8E8E8),
-                      ),
-                    ),
                   ),
                 ),
               ),
@@ -120,32 +98,10 @@ class _LoginPageState extends State<LoginPage> {
                 height: 12.h,
               ),
               SizedBox(
-                height: 72.h,
                 width: double.maxFinite,
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Type your password',
-                    hintStyle: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffBDBDBD),
-                    ),
-                    filled: true,
-                    fillColor: const Color(0xffffffff),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(0.r),
-                      borderSide: const BorderSide(
-                        width: 1,
-                        color: Color(0xffE8E8E8),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                      borderSide: const BorderSide(
-                        width: 1,
-                        color: Color(0xffE8E8E8),
-                      ),
-                    ),
                   ),
                 ),
               ),
@@ -171,21 +127,14 @@ class _LoginPageState extends State<LoginPage> {
                 height: 28.h,
               ),
               SizedBox(
-                height: 72.h,
                 width: double.maxFinite,
-                child: ElevatedButton(
+                child: FilledButton(
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                           builder: (context) => const HomeScreen()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff503E9D),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                  ),
                   child: Text(
                     "Login",
                     style: TextStyle(

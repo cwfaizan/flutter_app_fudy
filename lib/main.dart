@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fudy/pages/login_page.dart';
 
 import 'themes/theme_mode.dart';
 import 'widgets/popup_menu_button.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: lightThemeData,
         darkTheme: darkThemeData,
-        home: const PopUpButton(),
+        home: const LoginPage(),
       ),
       designSize: const Size(414, 896),
     );

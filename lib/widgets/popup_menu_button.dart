@@ -15,12 +15,14 @@ class PopUpButton extends StatelessWidget {
                 onTap: () {},
                 child: ListTile(
                   leading: const Icon(Icons.person),
-                  title: Text(
-                    "User Profile",
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xff2F2F2F),
+                  title: InkWell(
+                    child: Text(
+                      "User Profile",
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xff2F2F2F),
+                      ),
                     ),
                   ),
                 ),

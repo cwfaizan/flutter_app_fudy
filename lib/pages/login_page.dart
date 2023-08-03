@@ -8,6 +8,7 @@ import 'package:fudy/models/api_auth.dart';
 import 'package:fudy/network/network_client.dart';
 import 'package:fudy/pages/forgot_passward.dart';
 import 'package:fudy/pages/home_screen.dart';
+import 'package:fudy/pages/recipe_home_page.dart';
 import 'package:fudy/pages/registeration_page.dart';
 import 'package:fudy/utils/util.dart';
 
@@ -214,10 +215,17 @@ class _LoginPageState extends State<LoginPage> {
         ApiAuth.tokenExpiresAt =
             DateTime.parse((data['token_expires_at'] as List)[0]);
         ApiAuth.roleList = (data['roles'] as List);
-        // ignore: use_build_context_synchronously
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
-        );
+        if (ApiAuth.roleList!.contains('admin')) {
+          // ignore: use_build_context_synchronously
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const RecipeHomePage()),
+          );
+        } else {
+          // ignore: use_build_context_synchronously
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
+          );
+        }
       }
     } catch (e) {
       log(e.toString());

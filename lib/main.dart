@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: lightThemeData,
         darkTheme: darkThemeData,
-        home: const CheckAccountPage(),
+        home: const LoginPage(),
       ),
       designSize: const Size(375, 812),
     );

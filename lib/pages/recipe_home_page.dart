@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fudy/models/api_auth.dart';
 import 'package:fudy/models/recipe.dart';
 import 'package:fudy/widgets/recipe_home_card.dart';
 
+import '../network/network_client.dart';
 import 'recipe_edit_page.dart';
 
 class RecipeHomePage extends StatefulWidget {
@@ -13,15 +17,31 @@ class RecipeHomePage extends StatefulWidget {
 }
 
 class _RecipeHomePageState extends State<RecipeHomePage> {
-  var recipeList = [
-    for (int i = 0; i < 200; i++)
-      Recipe(
-        title: 'Vegetable Salad $i',
-        imageUrl: 'assets/images/recipe.jpg',
-        price: 20.5,
-        quantity: (i ~/ 3) + 3,
-      )
-  ];
+  List<Recipe> recipeList = [];
+  final nc = NetworkClient();
+
+  @override
+  void initState() {
+    initData();
+    super.initState();
+  }
+
+  initData() async {
+    final res = await nc.get('api/recipes', token: ApiAuth.token);
+    if (res.statusCode == 200) {
+      Map<String, dynamic> mp = json.decode(res.toString());
+      recipeList = (mp['data'] as List)
+          .map((e) => Recipe(
+                id: e['id'],
+                title: e['title'],
+                imageUrl: e['image_url'],
+                price: e['price'],
+                quantity: e['quantity'],
+              ))
+          .toList();
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,15 +170,6 @@ class _RecipeHomePageState extends State<RecipeHomePage> {
                               ),
                             ),
                           ),
-                          // ElevatedButton(
-                          //     onPressed: () {
-                          //       Navigator.of(context).pop(false);
-                          //       Navigator.of(context).push(MaterialPageRoute(
-                          //         builder: (context) => EditRecipePage(
-                          //             recipe: recipeList.elementAt(index)),
-                          //       ));
-                          //     },
-                          //     child: const Text("Yes")),
                           Center(
                             child: TextButton(
                               onPressed: () => Navigator.of(context).pop(false),
@@ -177,25 +188,6 @@ class _RecipeHomePageState extends State<RecipeHomePage> {
                   );
                 } else {
                   return showAlertDialog(context);
-                  // showDialog(
-                  //   context: context,
-                  //   builder: (BuildContext context) {
-                  //     return AlertDialog(
-                  //       title: const Text("Delete Recipe"),
-                  //       content: const Text(
-                  //           "Are you sure you want to delete this recipe?"),
-                  //       actions: [
-                  //         ElevatedButton(
-                  //             onPressed: () => Navigator.of(context).pop(true),
-                  //             child: const Text("Yes")),
-                  //         ElevatedButton(
-                  //           onPressed: () => Navigator.of(context).pop(false),
-                  //           child: const Text("No"),
-                  //         ),
-                  //       ],
-                  //     );
-                  //   },
-                  // );
                 }
               },
               background: Padding(

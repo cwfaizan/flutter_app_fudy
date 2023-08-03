@@ -26,7 +26,7 @@ class RecipeHomeCard extends StatelessWidget {
             width: 50.w,
             height: 50.h,
             child: CircleAvatar(
-              backgroundImage: AssetImage(recipe.imageUrl),
+              backgroundImage: NetworkImage(recipe.imageUrl),
             ),
           ),
           title: Text(

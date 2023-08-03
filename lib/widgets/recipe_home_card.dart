@@ -12,6 +12,7 @@ class RecipeHomeCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Container(
         decoration: BoxDecoration(
+            // color: Color(0xffFCC50A),
             color: Theme.of(context).colorScheme.primaryContainer,
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(width: 0.50.w, color: const Color(0xFFE7E7E7))),

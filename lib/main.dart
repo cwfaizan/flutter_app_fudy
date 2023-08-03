@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudy/pages/forgot_passward.dart';
-import 'package:fudy/pages/home_screen.dart';
-import 'package:fudy/pages/login_page.dart';
-import 'package:fudy/pages/otp_page.dart';
-import 'package:fudy/pages/register_page.dart';
 
+// import 'pages/transaction_page_sheet.dart';
+import 'pages/transaction_page_sheet.dart';
 import 'themes/theme_mode.dart';
-import 'widgets/popup_menu_button.dart';
 
 // import 'pages/setting_page.dart';
 // import 'widgets/transcation_history_content.dart';
@@ -28,7 +24,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: lightThemeData,
         darkTheme: darkThemeData,
-        home: const HomeScreen(),
+        home: TrancationBottomSheet(),
       ),
       designSize: const Size(375, 812),
     );

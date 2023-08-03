@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
               //   height: 21.h,
               // ),
               Text(
-                "Email",
+                "Phone Number",
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.maxFinite,
                 child: TextFormField(
                   decoration: const InputDecoration(
-                    hintText: 'Insert your email here',
+                    hintText: 'Insert your Phone Number here',
                   ),
                 ),
               ),

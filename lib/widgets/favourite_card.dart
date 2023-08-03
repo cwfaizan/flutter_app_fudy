@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:like_button/like_button.dart';
 
 class FavouriteCard extends StatelessWidget {
   const FavouriteCard({
@@ -19,8 +20,8 @@ class FavouriteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 177.w,
-      height: 257.h,
+      width: 160.w,
+      height: 240.h,
       padding: REdgeInsets.all(16),
       decoration: ShapeDecoration(
         color: Colors.white,
@@ -70,11 +71,14 @@ class FavouriteCard extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SvgPicture.asset(
-                isFavourite ? "assets/svgs/heart.svg" : "assets/svgs/heart.svg",
-                height: 20.h,
-                width: 20.w,
-              ),
+              const LikeButton(
+                isLiked: true,
+              )
+              // SvgPicture.asset(
+              //   isFavourite ? "assets/svgs/heart.svg" : "assets/svgs/heart.svg",
+              //   height: 20.h,
+              //   width: 20.w,
+              // ),
             ],
           ),
         ],

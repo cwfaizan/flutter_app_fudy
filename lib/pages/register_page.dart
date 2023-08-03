@@ -77,7 +77,7 @@ class _RegisterPageState extends State<RegisterPage> {
               //   height: 21.h,
               // ),
               Text(
-                "Email",
+                "Name",
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
@@ -91,7 +91,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: double.maxFinite,
                 child: TextFormField(
                   decoration: const InputDecoration(
-                    hintText: 'Insert your email here',
+                    hintText: 'Insert your Name here',
                   ),
                 ),
               ),

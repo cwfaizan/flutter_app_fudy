@@ -26,6 +26,20 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back_ios)),
+        title: Text(
+          "Favorites",
+          style: TextStyle(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w700,
+              color: const Color(0xff2F2F2F)),
+        ),
+      ),
       backgroundColor: const Color(0xffFFFFFF),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -87,7 +101,7 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
                                 onTap: () {}, child: const Text("Voucher")),
                           ),
                         ),
-                            PopupMenuItem(
+                        PopupMenuItem(
                           child: ListTile(
                             leading: const Icon(Icons.history),
                             title: InkWell(
@@ -140,19 +154,17 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
         padding: EdgeInsets.symmetric(horizontal: 20.sp),
         child: Column(
           children: [
-            SizedBox(
-              height: 60.h,
-            ),
-            Text(
-              "Favorites",
-              style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xff2F2F2F)),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
+            // SizedBox(
+            //   height: 60.h,
+            // ),
+            // Text(
+            //   "Favorites",
+            //   style: TextStyle(
+            //       fontSize: 14.sp,
+            //       fontWeight: FontWeight.w700,
+            //       color: const Color(0xff2F2F2F)),
+            // ),
+
             SizedBox(
               width: double.maxFinite,
               child: TextFormField(
@@ -166,16 +178,19 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
               ),
             ),
             SizedBox(
-              height: 540.h,
+              height: 20.h,
+            ),
+            SizedBox(
+              height: 500.h,
               child: GridView.count(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 20.w,
-                  mainAxisSpacing: 32.h,
-                  childAspectRatio: 20.w / 32.h,
+                  crossAxisSpacing: 15.w,
+                  mainAxisSpacing: 25.h,
+                  childAspectRatio: 15.w / 25.h,
                   children: List.generate(6, (index) {
                     return SizedBox(
-                      height: 257.h,
-                      width: 177.w,
+                      height: 240.h,
+                      width: 160.w,
                       child: const FavouriteCard(
                           imageUrl: "https://via.placeholder.com/152x190",
                           title: 'Salad with Bread',

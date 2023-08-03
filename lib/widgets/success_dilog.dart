@@ -13,23 +13,11 @@ class _SuccessDilogeState extends State<SuccessDiloge> {
     // set up the button
 
     Widget cancelButton = SizedBox(
-      height: 57.h,
       width: 326.w,
-      child: ElevatedButton(
+      child: FilledButton(
         onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xff503E9D),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.r),
-          ),
-        ),
-        child: Text(
+        child: const Text(
           "Done",
-          style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
-            color: const Color(0xffFDFDFD),
-          ),
         ),
       ),
     );

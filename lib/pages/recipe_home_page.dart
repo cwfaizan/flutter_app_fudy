@@ -25,6 +25,65 @@ class _RecipeHomePageState extends State<RecipeHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    showAlertDialog(BuildContext context) {
+      // set up the button
+      Widget cancelButton = TextButton(
+        child: Text(
+          "Cancel",
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w700),
+        ),
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+      );
+      Widget okButton = SizedBox(
+        width: 326.w,
+        child: FilledButton(
+          onPressed: () {},
+          child: const Text(
+            "Delete",
+          ),
+        ),
+      );
+
+      // set up the AlertDialog
+      AlertDialog alert = AlertDialog(
+        title: Column(
+          children: [
+            Center(child: Image.asset("assets/images/recipe.png")),
+            SizedBox(
+              height: 28.h,
+            ),
+            Text(
+              "Removed from your Recipes?",
+              style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xff2F2F2F)),
+            )
+          ],
+        ),
+        content: const Text(
+            "This menu will be removed from your List and if you want it again you will have to add it again."),
+        actions: [
+          Column(
+            children: [okButton, cancelButton],
+          ),
+        ],
+      );
+
+      // show the dialog
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        },
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fudy'),
@@ -57,11 +116,28 @@ class _RecipeHomePageState extends State<RecipeHomePage> {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: const Text("Edit Recipe"),
+                        title: Column(
+                          children: [
+                            Center(
+                                child: Image.asset("assets/images/recipe.png")),
+                            SizedBox(
+                              height: 28.h,
+                            ),
+                            Text(
+                              "Want to edit this Recipe?",
+                              style: TextStyle(
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color(0xff2F2F2F)),
+                            )
+                          ],
+                        ),
                         content: const Text(
                             "Are you sure you want to edit this recipe?"),
                         actions: [
-                          ElevatedButton(
+                          SizedBox(
+                            width: 326.w,
+                            child: FilledButton(
                               onPressed: () {
                                 Navigator.of(context).pop(false);
                                 Navigator.of(context).push(MaterialPageRoute(
@@ -69,35 +145,57 @@ class _RecipeHomePageState extends State<RecipeHomePage> {
                                       recipe: recipeList.elementAt(index)),
                                 ));
                               },
-                              child: const Text("Yes")),
-                          ElevatedButton(
-                            onPressed: () => Navigator.of(context).pop(false),
-                            child: const Text("No"),
+                              child: const Text(
+                                "Yes",
+                              ),
+                            ),
+                          ),
+                          // ElevatedButton(
+                          //     onPressed: () {
+                          //       Navigator.of(context).pop(false);
+                          //       Navigator.of(context).push(MaterialPageRoute(
+                          //         builder: (context) => EditRecipePage(
+                          //             recipe: recipeList.elementAt(index)),
+                          //       ));
+                          //     },
+                          //     child: const Text("Yes")),
+                          Center(
+                            child: TextButton(
+                              onPressed: () => Navigator.of(context).pop(false),
+                              child: Text(
+                                "No",
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black),
+                              ),
+                            ),
                           ),
                         ],
                       );
                     },
                   );
                 } else {
-                  return await showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text("Delete Recipe"),
-                        content: const Text(
-                            "Are you sure you want to delete this recipe?"),
-                        actions: [
-                          ElevatedButton(
-                              onPressed: () => Navigator.of(context).pop(true),
-                              child: const Text("Yes")),
-                          ElevatedButton(
-                            onPressed: () => Navigator.of(context).pop(false),
-                            child: const Text("No"),
-                          ),
-                        ],
-                      );
-                    },
-                  );
+                  return showAlertDialog(context);
+                  // showDialog(
+                  //   context: context,
+                  //   builder: (BuildContext context) {
+                  //     return AlertDialog(
+                  //       title: const Text("Delete Recipe"),
+                  //       content: const Text(
+                  //           "Are you sure you want to delete this recipe?"),
+                  //       actions: [
+                  //         ElevatedButton(
+                  //             onPressed: () => Navigator.of(context).pop(true),
+                  //             child: const Text("Yes")),
+                  //         ElevatedButton(
+                  //           onPressed: () => Navigator.of(context).pop(false),
+                  //           child: const Text("No"),
+                  //         ),
+                  //       ],
+                  //     );
+                  //   },
+                  // );
                 }
               },
               background: Padding(

@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class TrancationBottomSheet extends StatelessWidget {
   const TrancationBottomSheet({super.key});
@@ -63,7 +61,6 @@ class TrancationBottomSheet extends StatelessWidget {
                               SizedBox(
                                 height: 32.h,
                               ),
-
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -97,7 +94,6 @@ class TrancationBottomSheet extends StatelessWidget {
                               SizedBox(
                                 height: 16.h,
                               ),
-
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -131,7 +127,6 @@ class TrancationBottomSheet extends StatelessWidget {
                               SizedBox(
                                 height: 16.h,
                               ),
-
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -186,7 +181,6 @@ class TrancationBottomSheet extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                     
                             ],
                           ),
                         )),
@@ -194,6 +188,7 @@ class TrancationBottomSheet extends StatelessWidget {
                 },
                 child: const Text(
                   'Home Page',
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
             ],

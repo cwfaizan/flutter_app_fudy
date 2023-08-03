@@ -25,6 +25,7 @@ class _TransactionPageState extends State<TransactionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -127,157 +128,163 @@ class _TransactionPageState extends State<TransactionPage> {
         onTap: _onItemTapped,
         // elevation: 5,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 53.h,
-            ),
-            Row(
-              children: [
-                const Icon(Icons.arrow_back_ios),
-                SizedBox(
-                  width: 78.w,
-                ),
-                Text(
-                  "Transaction History",
-                  style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w700,
-                      color: const Color(0xff2F2F2F)),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 28.h,
-            ),
-            Stack(
-              children: [
-                Image.asset("assets/images/purple.png"),
-                ListTile(
-                  title: Padding(
-                    padding: EdgeInsets.only(left: 38.w, top: 25.h),
-                    child: Text(
-                      "Total Spending this month",
-                      style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xffffffff)),
-                    ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 53.h,
+              ),
+              Row(
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Icon(Icons.arrow_back_ios)),
+                  SizedBox(
+                    width: 78.w,
                   ),
-                  subtitle: Padding(
-                    padding: EdgeInsets.only(left: 38.w, top: 12.h),
-                    child: Text(
-                      "\$543.43",
-                      style: TextStyle(
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xffffffff)),
-                    ),
+                  Text(
+                    "Transaction History",
+                    style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff2F2F2F)),
                   ),
-                  trailing: Padding(
-                    padding: EdgeInsets.only(top: 30.h),
-                    child: SvgPicture.asset("assets/svgs/cart.svg"),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 30.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Most Purchased This Month",
-                  style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w700,
-                      color: const Color(0xff2F2F2F)),
-                ),
-                Row(
-                  children: [
-                    TextButton(
-                      onPressed: () {},
+                ],
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Stack(
+                children: [
+                  Image.asset("assets/images/purple.png"),
+                  ListTile(
+                    title: Padding(
+                      padding: EdgeInsets.only(left: 30.w, top: 20.h),
                       child: Text(
-                        "See All",
+                        "Total Spending this month",
                         style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w700,
-                            color: const Color(0xff503E9D)),
+                            color: const Color(0xffffffff)),
                       ),
                     ),
-                    const Icon(Icons.arrow_forward_ios),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            SizedBox(
-              height: 225.h,
-              width: double.maxFinite,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) => Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w),
-                  child: Container(
-                    color: const Color(0xffffffff),
-                    height: 220.h,
-                    width: 123.w,
-                    child: const HomeCard(
-                      imageUrl: "https://via.placeholder.com/152x190",
-                      title: 'Salad with Bread',
-                      price: 82,
+                    subtitle: Padding(
+                      padding: EdgeInsets.only(left: 30.w, top: 12.h),
+                      child: Text(
+                        "\$543.43",
+                        style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xffffffff)),
+                      ),
+                    ),
+                    trailing: Padding(
+                      padding: EdgeInsets.only(top: 30.h),
+                      child: SvgPicture.asset("assets/svgs/cart.svg"),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Most Purchased This Month",
+                    style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff2F2F2F)),
+                  ),
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "See All",
+                          style: TextStyle(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xff503E9D)),
+                        ),
+                      ),
+                      const Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              SizedBox(
+                height: 225.h,
+                width: double.maxFinite,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) => Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                    child: Container(
+                      color: const Color(0xffffffff),
+                      height: 220.h,
+                      width: 123.w,
+                      child: const HomeCard(
+                        imageUrl: "https://via.placeholder.com/152x190",
+                        title: 'Salad with Bread',
+                        price: 82,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 30.h,
-            ),
-            Text(
-              "Transaction",
-              style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xff2F2F2F)),
-            ),
-            SizedBox(
-              height: 12.h,
-            ),
-            Text(
-              "Find all your transactions here",
-              style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xffBDBDBD)),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            SizedBox(
-              height: 220.h,
-              width: double.maxFinite,
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) => Padding(
-                  padding: EdgeInsets.only(bottom: 5.w),
-                  child: Container(
-                      color: const Color(0xffffffff),
-                      height: 82.h,
-                      width: double.maxFinite,
-                      child: const TransactionHistory()),
+              SizedBox(
+                height: 15.h,
+              ),
+              Text(
+                "Transaction",
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0xff2F2F2F)),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              Text(
+                "Find all your transactions here",
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0xffBDBDBD)),
+              ),
+              // SizedBox(
+              //   height: 10.h,
+              // ),
+              SizedBox(
+                height: double.maxFinite,
+                width: double.maxFinite,
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (context, index) => Padding(
+                    padding: EdgeInsets.only(bottom: 10.w),
+                    child: Container(
+                        color: const Color(0xffffffff),
+                        height: 65.h,
+                        width: double.maxFinite,
+                        child: const TransactionHistory()),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

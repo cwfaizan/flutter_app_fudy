@@ -1,12 +1,18 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fudy/models/api_auth.dart';
 import 'package:fudy/pages/favourite_card_page.dart';
+import 'package:fudy/pages/login_page.dart';
 import 'package:fudy/widgets/home_page_content.dart';
 
+import '../network/network_client.dart';
+import '../utils/util.dart';
 import '../widgets/home_card.dart';
-import '../widgets/transcation_history_content.dart';
 import 'transaction_page.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,6 +23,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final nc = NetworkClient();
   int selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -81,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 onTap: () {}, child: const Text("Voucher")),
                           ),
                         ),
-                             PopupMenuItem(
+                        PopupMenuItem(
                           child: ListTile(
                             leading: const Icon(Icons.history),
                             title: InkWell(
@@ -99,7 +106,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: ListTile(
                             leading: const Icon(Icons.logout),
                             title: InkWell(
-                                onTap: () {}, child: const Text("Log out")),
+                                onTap: () {
+                                  submitForm(context);
+                                },
+                                child: const Text("Log out")),
                           ),
                         )
                       ]),
@@ -143,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 54.h,
                 ),
                 Text(
-                  "Hello, Jhone",
+                  "Hello, ${ApiAuth.name}",
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
@@ -348,5 +358,29 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> submitForm(BuildContext context) async {
+    try {
+      final res = await nc.get('api/logout', token: ApiAuth.token);
+      if (res.statusCode == 200) {
+        // Map<String, dynamic> mp = json.decode(res.toString());
+        // ignore: use_build_context_synchronously
+        // Utility.showMessage(context, mp['message']);
+        // Map<String, dynamic> data = mp['data'];
+        ApiAuth.userId = null;
+        ApiAuth.name = null;
+        ApiAuth.tokenType = null;
+        ApiAuth.token = null;
+        ApiAuth.tokenExpiresAt = null;
+        ApiAuth.roleList = null;
+        // ignore: use_build_context_synchronously
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const LoginPage()),
+        );
+      }
+    } catch (e) {
+      log(e.toString());
+    }
   }
 }

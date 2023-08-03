@@ -28,10 +28,10 @@ class PopUpButton extends StatelessWidget {
                 ),
               ),
             ),
-            PopupMenuItem(
+            const PopupMenuItem(
               child: Text("data"),
             ),
-            PopupMenuItem(
+            const PopupMenuItem(
               child: Text("page"),
             ),
           ],

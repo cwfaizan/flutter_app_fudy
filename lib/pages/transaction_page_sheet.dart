@@ -19,7 +19,7 @@ class TrancationBottomSheet extends StatelessWidget {
                     builder: (context) => Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(32.r)),
-                        height: 793.h,
+                        height: 600.h,
                         width: double.maxFinite,
                         child: Padding(
                           padding: EdgeInsets.only(left: 20.w, right: 20.w),
@@ -32,14 +32,11 @@ class TrancationBottomSheet extends StatelessWidget {
                                   Center(
                                     child: Image.asset(
                                       "assets/images/re.png",
-                                      width: 196.w,
-                                      height: 196.h,
+                                      height: 95.h,
+                                      width: 95.h,
                                     ),
                                   ),
                                 ],
-                              ),
-                              SizedBox(
-                                height: 32.h,
                               ),
                               Text(
                                 "Description",
@@ -49,17 +46,17 @@ class TrancationBottomSheet extends StatelessWidget {
                                     color: const Color(0xff2F2F2F)),
                               ),
                               SizedBox(
-                                height: 8.h,
+                                height: 4.h,
                               ),
                               Text(
-                                "Lorem Ipsum is simply dummy text of the printing\n and typesetting industry. Lorem Ipsum has been\n the industry's standard nturies  Ipsum has been the\n industry's standard nturies",
+                                "Lorem Ipsum is simply dummy text of the printing\n and typesetting industry.  Ipsum has been the\n industry's standard nturies",
                                 style: TextStyle(
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w500,
                                     color: const Color(0xffBDBDBD)),
                               ),
                               SizedBox(
-                                height: 32.h,
+                                height: 15.h,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -92,7 +89,7 @@ class TrancationBottomSheet extends StatelessWidget {
                                 ],
                               ),
                               SizedBox(
-                                height: 16.h,
+                                height: 15.h,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -125,7 +122,7 @@ class TrancationBottomSheet extends StatelessWidget {
                                 ],
                               ),
                               SizedBox(
-                                height: 16.h,
+                                height: 15.h,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -158,26 +155,14 @@ class TrancationBottomSheet extends StatelessWidget {
                                 ],
                               ),
                               SizedBox(
-                                height: 32.h,
+                                height: 15.h,
                               ),
                               SizedBox(
-                                height: 57.h,
                                 width: double.maxFinite,
-                                child: ElevatedButton(
+                                child: FilledButton(
                                   onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xff503E9D),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12.r),
-                                    ),
-                                  ),
-                                  child: Text(
+                                  child: const Text(
                                     "Leave a review",
-                                    style: TextStyle(
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w500,
-                                      color: const Color(0xffFDFDFD),
-                                    ),
                                   ),
                                 ),
                               ),

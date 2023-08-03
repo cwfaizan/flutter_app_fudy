@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudy/pages/login_page.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class RegistrationPage extends StatefulWidget {
+  const RegistrationPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<RegistrationPage> createState() => _RegistrationPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +109,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 10.h,
               ),
               SizedBox(
-                height: 72.h,
                 width: double.maxFinite,
                 child: TextFormField(
                   decoration: const InputDecoration(

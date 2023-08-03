@@ -51,7 +51,7 @@ class _SpecialRequestState extends State<SpecialRequest> {
                           child: TextFormField(
                             keyboardType: TextInputType.multiline,
                             maxLines: 5,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Write your special request',
                             ),
                           ),

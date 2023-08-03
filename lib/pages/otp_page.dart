@@ -1,15 +1,27 @@
+// ignore_for_file: unused_local_variable
+
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fudy/pages/check_account.dart';
+import 'package:fudy/pages/registeration_page.dart';
 import 'package:pinput/pinput.dart';
 
-class OtpVerification extends StatefulWidget {
-  const OtpVerification({super.key});
+import '../network/network_client.dart';
+import '../utils/util.dart';
 
-  @override
-  State<OtpVerification> createState() => _OtpVerificationState();
-}
+class OtpVerification extends StatelessWidget {
+  final Map<String, dynamic> jsonData;
+  OtpVerification({super.key, required this.jsonData});
 
-class _OtpVerificationState extends State<OtpVerification> {
+  Map<String, dynamic>? data;
+  final nc = NetworkClient();
+  final pinPutController = TextEditingController();
+  // String ?text;
+
+  // get data => null;
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -47,7 +59,7 @@ class _OtpVerificationState extends State<OtpVerification> {
             ),
             Center(
                 child: Text(
-              "OTP Verivication",
+              "OTP Verification",
               style: TextStyle(
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w700,
@@ -81,16 +93,16 @@ class _OtpVerificationState extends State<OtpVerification> {
             Center(
               child: Pinput(
                 length: 4,
-                // controller: ,
+                controller: pinPutController,
                 defaultPinTheme: defaultPinTheme,
                 focusedPinTheme: focusedPinTheme,
                 submittedPinTheme: submittedPinTheme,
-                validator: (s) {
-                  return s == '2222' ? null : 'Pin is incorrect';
-                },
+                // validator: (s) {
+                //   return s == '2222' ? null : 'Pin is incorrect';
+                // },
                 pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                 showCursor: true,
-                // onCompleted: (pin) => print(pin),
+                onCompleted: (pin) => submitForm(context),
               ),
             ),
             SizedBox(
@@ -119,10 +131,40 @@ class _OtpVerificationState extends State<OtpVerification> {
                   )
                 ],
               ),
-            )
+            ),
+            // data = jsonData.entoString()
+// print(entryList[0].key);
+            // data=jsonData.keys.toString(),
+            Text(jsonData['pin_message'].toString())
           ],
         ),
       ),
     );
+  }
+
+  Future<void> submitForm(BuildContext context) async {
+    try {
+      final param = {
+        'item': jsonData['item'].toString(),
+        'user_id': 3,
+        'pin_type': jsonData['pin_type'].toString(),
+        'pin': pinPutController.text.toString(),
+      };
+      final res = await nc.get('api/verify-pin', queryParameters: param);
+      if (res.statusCode == 200) {
+        Map<String, dynamic> mp = json.decode(res.toString());
+
+        // ignore: use_build_context_synchronously
+        Utility.showMessage(context, mp['message']);
+        Map<String, dynamic> data = mp['data'];
+
+        // ignore: use_build_context_synchronously
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const RegistrationPage()),
+        );
+      }
+    } catch (e) {
+      log(e.toString());
+    }
   }
 }

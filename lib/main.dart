@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fudy/pages/login_page.dart';
 
 // import 'pages/transaction_page_sheet.dart';
+import 'pages/check_account.dart';
 import 'pages/transaction_page_sheet.dart';
 import 'themes/theme_mode.dart';
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: lightThemeData,
         darkTheme: darkThemeData,
-        home: TrancationBottomSheet(),
+        home: const CheckAccountPage(),
       ),
       designSize: const Size(375, 812),
     );

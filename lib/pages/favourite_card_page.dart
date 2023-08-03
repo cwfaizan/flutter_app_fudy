@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fudy/pages/home_screen.dart';
 import 'package:fudy/widgets/favourite_card.dart';
 
-import '../widgets/transcation_history_content.dart';
+
 import 'transaction_page.dart';
 
 class FavouriteCardPage extends StatefulWidget {

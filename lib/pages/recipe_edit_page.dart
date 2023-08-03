@@ -17,6 +17,13 @@ class _EditRecipePageState extends State<EditRecipePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+           
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back_ios)),
+      
         title: Text(widget.recipe != null ? 'Edit Recipe' : 'Add New Recipe'),
       ),
       body: SafeArea(

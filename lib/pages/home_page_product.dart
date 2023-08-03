@@ -19,7 +19,7 @@ class HomePageProductDetail extends StatelessWidget {
                     builder: (context) => Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(32.r)),
-                        height: 671.h,
+                        height: 750.h,
                         width: double.maxFinite,
                         child: Padding(
                           padding: EdgeInsets.only(left: 20.w, right: 20.w),
@@ -114,8 +114,8 @@ class HomePageProductDetail extends StatelessWidget {
                               Row(
                                 children: [
                                   SizedBox(
-                                    height: 46.h,
-                                    width: 46.w,
+                                    height: 35.h,
+                                    width: 35.w,
                                     child: TextButton(
                                       onPressed: () {},
                                       style: TextButton.styleFrom(
@@ -143,12 +143,13 @@ class HomePageProductDetail extends StatelessWidget {
                                     width: 16.w,
                                   ),
                                   SizedBox(
-                                    height: 46.h,
-                                    width: 46.w,
+                                    height: 35.h,
+                                    width: 35.w,
                                     child: TextButton(
                                       onPressed: () {},
                                       style: TextButton.styleFrom(
-                                        backgroundColor: const Color(0xffE8E8E8),
+                                        backgroundColor:
+                                            const Color(0xffE8E8E8),
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(12.r),
@@ -173,8 +174,8 @@ class HomePageProductDetail extends StatelessWidget {
                                     width: 16.w,
                                   ),
                                   SizedBox(
-                                    height: 46.h,
-                                    width: 46.w,
+                                    height: 35.h,
+                                    width: 35.w,
                                     child: TextButton(
                                       onPressed: () {},
                                       style: TextButton.styleFrom(
@@ -203,28 +204,12 @@ class HomePageProductDetail extends StatelessWidget {
                                     width: 66.w,
                                   ),
                                   SizedBox(
-                                    width: 138.w,
-                                    height: 57.h,
+                                    width: 130.w,
+                                    height: 45.h,
                                     child: ElevatedButton(
                                       onPressed: () {},
-                                      style: TextButton.styleFrom(
-                                        backgroundColor:
-                                            const Color(0xff503E9D),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(12.r),
-                                          side: BorderSide(
-                                            width: 1.sp,
-                                          ),
-                                        ),
-                                      ),
-                                      child: Text(
+                                      child: const Text(
                                         "Add to Chart",
-                                        style: TextStyle(
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w700,
-                                          color: const Color(0xffFFFFFF),
-                                        ),
                                       ),
                                     ),
                                   )

@@ -3,7 +3,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fudy/models/api_auth.dart';
 import 'package:fudy/network/network_client.dart';
 import 'package:fudy/pages/forgot_passward.dart';

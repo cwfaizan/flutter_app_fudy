@@ -10,9 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudy/network/network_client.dart';
 import 'package:fudy/pages/otp_page.dart';
 import 'package:fudy/utils/util.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 
-import 'home_screen.dart';
 
 class CheckAccountPage extends StatefulWidget {
   const CheckAccountPage({super.key});

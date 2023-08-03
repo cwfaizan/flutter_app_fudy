@@ -87,7 +87,7 @@ class _TransactionPageState extends State<TransactionPage> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const TransactionHistory()),
+                                            const TransactionPage()),
                                   );
                                 },
                                 child: const Text("Transaction History")),

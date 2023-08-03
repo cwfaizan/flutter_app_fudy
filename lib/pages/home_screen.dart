@@ -7,6 +7,7 @@ import 'package:fudy/widgets/home_page_content.dart';
 
 import '../widgets/home_card.dart';
 import '../widgets/transcation_history_content.dart';
+import 'transaction_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -88,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const TransactionHistory()),
+                                            const TransactionPage()),
                                   );
                                 },
                                 child: const Text("Transaction History")),

@@ -5,6 +5,7 @@ import 'package:fudy/pages/home_screen.dart';
 import 'package:fudy/widgets/favourite_card.dart';
 
 import '../widgets/transcation_history_content.dart';
+import 'transaction_page.dart';
 
 class FavouriteCardPage extends StatefulWidget {
   const FavouriteCardPage({super.key});
@@ -94,7 +95,7 @@ class _FavouriteCardPageState extends State<FavouriteCardPage> {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const TransactionHistory()),
+                                            const TransactionPage()),
                                   );
                                 },
                                 child: const Text("Transaction History")),

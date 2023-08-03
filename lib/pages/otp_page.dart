@@ -5,13 +5,13 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fudy/pages/check_account.dart';
 import 'package:fudy/pages/registeration_page.dart';
 import 'package:pinput/pinput.dart';
 
 import '../network/network_client.dart';
 import '../utils/util.dart';
 
+// ignore: must_be_immutable
 class OtpVerification extends StatelessWidget {
   final Map<String, dynamic> jsonData;
   OtpVerification({super.key, required this.jsonData});

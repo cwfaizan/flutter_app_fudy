@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudy/pages/login_page.dart';
 
 // import 'pages/transaction_page_sheet.dart';
-import 'pages/check_account.dart';
-import 'pages/transaction_page_sheet.dart';
+
 import 'themes/theme_mode.dart';
 
 // import 'pages/setting_page.dart';
